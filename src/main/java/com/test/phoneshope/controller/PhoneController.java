@@ -37,7 +37,7 @@ public class PhoneController {
     }
 
     @GetMapping("/phones/{id}")
-    public ResponseEntity<Phone> getPhoneById(@PathVariable(value = "id") Long phoneId)
+    public ResponseEntity<Phone> getPhoneById(@PathVariable(value = "id") Integer phoneId)
             throws ResourceNotFoundException {
         Phone phone = phoneRepository.findById(phoneId)
                 .orElseThrow(() -> new ResourceNotFoundException("phone not found for this id :: " + phoneId));
@@ -50,7 +50,7 @@ public class PhoneController {
     }
 
     @PutMapping("/phones/{id}")
-    public ResponseEntity<Phone> updatePhone(@PathVariable(value = "id") Long phoneId,
+    public ResponseEntity<Phone> updatePhone(@PathVariable(value = "id") Integer phoneId,
                                                    @Validated @RequestBody Phone phoneDetails) throws ResourceNotFoundException {
         Phone phone = phoneRepository.findById(phoneId)
                 .orElseThrow(() -> new ResourceNotFoundException("Phone not found for this id :: " + phoneId));
@@ -58,13 +58,14 @@ public class PhoneController {
         phone.setId(phoneDetails.getId());
         phone.setName(phoneDetails.getName());
         phone.setPrice(phoneDetails.getPrice());
+        phone.setQuantity(phoneDetails.getQuantity());
         final Phone updatePhone = phoneRepository.save(phone);
         return ResponseEntity.ok(updatePhone);
     }
 
 
     @DeleteMapping("/phones/{id}")
-    public Map<String, Boolean> deletePhone(@PathVariable(value = "id") Long phoneId)
+    public Map<String, Boolean> deletePhone(@PathVariable(value = "id") Integer phoneId)
             throws ResourceNotFoundException {
         Phone phone = phoneRepository.findById(phoneId)
                 .orElseThrow(() -> new ResourceNotFoundException("Phone not found for this id :: " + phoneId));

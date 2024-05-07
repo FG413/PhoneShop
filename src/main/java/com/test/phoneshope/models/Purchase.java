@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 @Data
 public class Purchase {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Column(name = "client_name")

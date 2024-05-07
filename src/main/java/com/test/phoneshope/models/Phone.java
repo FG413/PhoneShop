@@ -9,13 +9,16 @@ import lombok.Data;
 public class Phone {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
 
     @Column(name = "phone_name")
     private String name;
 
     @Column(name = "phone_price")
     private int price;
+
+    @Column(name = "phone_quantity")
+    private int quantity;
 
 }
