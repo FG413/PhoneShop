@@ -1,0 +1,5 @@
+com.test.phoneshope
+com.test.phoneshope.controller
+com.test.phoneshope.exception
+com.test.phoneshope.models
+com.test.phoneshope.repository

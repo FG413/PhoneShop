@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.test.phoneshope"},{"l":"com.test.phoneshope.controller"},{"l":"com.test.phoneshope.exception"},{"l":"com.test.phoneshope.models"},{"l":"com.test.phoneshope.repository"}];updateSearchResults();
